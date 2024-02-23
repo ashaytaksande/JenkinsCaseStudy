@@ -43,6 +43,11 @@ pipeline {
                 agent {
                     label 'publish'
                 }
+                when {
+                    expression {
+                        branchName == 'master'
+                    }
+                }            
                 steps {
                     sh '''
                     cd /home/ubuntu/
